@@ -1,0 +1,45 @@
+export WORK_PATH=${HOME}/coding/work
+export GOPATH=${HOME}/coding/go
+
+#############
+#   Utils   #
+#############
+
+# macOS like open
+# Caution: only use these on Linux systems.
+function open() {
+	for file in $@; do
+		xdg-open $file
+	done 1> /dev/null 2> /dev/null
+}
+
+# Change directory and automatically list all the files
+function list-all() {
+    emulate -L zsh; ls
+}
+
+chpwd_functions=(${chpwd_functions[@]} "list-all")
+
+# Change directory with Alt+Left/Right (backward and forward on latest history)
+function cd-undo() {
+	pushd .. > /dev/null 2>&1
+	zle reset-prompt
+}
+
+function cd-redo() {
+	if [[ ${dirstack[1]} =~ ${PWD} ]]; then
+		popd > /dev/null 2>&1
+		zle reset-prompt
+	fi
+}
+
+zle -N cd-undo && bindkey '^[[1;3D' cd-undo
+zle -N cd-redo && bindkey '^[[1;3C' cd-redo
+
+# Usefull Alias (review this for current distro)
+alias sudo="nocorrect sudo"
+alias zsh-reload="exec ${SHELL} -l"
+alias ls="ls --color=auto -pFG"
+alias update="sudo apt -ym update && sudo apt -ym upgrade && sudo apt -ymf install --no-install-recommends"
+alias clean="sudo apt -y autoremove --purge && sudo apt -y autoclean && sudo apt -y clean; find ~ \( -name '.DS_Store' -o -name 'Icon?' -o -name '*~' \) -delete"
+alias installed-packages="comm -13 <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort) <(comm -23 <(dpkg-query -W -f='\${Package}\n' | sed 1d | sort) <(apt-mark showauto | sort))"

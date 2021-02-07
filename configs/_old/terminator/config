@@ -1,0 +1,24 @@
+[global_config]
+[keybindings]
+  go_left = None
+  go_right = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#1d1f21"
+    background_image = None
+    cursor_color = "#c5c8c6"
+    font = Inconsolata Nerd Font Mono Medium 11
+    foreground_color = "#c5c8c6"
+    palette = "#1d1f21:#cc342b:#198844:#fba922:#3971ed:#a36ac7:#3971ed:#c5c8c6:#969896:#cc342b:#198844:#fba922:#3971ed:#a36ac7:#3971ed:#ffffff"
+    scrollback_infinite = True
+    show_titlebar = False
+    use_system_font = False

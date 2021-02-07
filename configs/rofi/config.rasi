@@ -1,0 +1,3 @@
+configuration {
+	theme: "/home/joaopaulo/.config/rofi/panda.rasi";
+}

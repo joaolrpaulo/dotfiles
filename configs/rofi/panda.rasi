@@ -1,0 +1,119 @@
+* {
+    background:                  rgba ( 0, 0, 0, 100 % );
+    background-selected:         rgba ( 186, 185, 196, 20 % );
+    foreground:                  rgba ( 186, 185, 196, 100 % );
+
+    background-color:            @background;
+    separatorcolor:              @background;
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+
+    active-background:           @background-selected;
+    active-foreground:           @foreground;
+
+    selected-active-background:  @background-selected;
+    selected-active-foreground:  @foreground;
+
+    selected-normal-background:  @background-selected;
+    selected-normal-foreground:  @foreground;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @foreground;
+
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+
+    spacing:                     2;
+
+    font: "Iosevka Bold 12";
+}
+window {
+    background-color: @background;
+    padding:          5;
+}
+mainbox {
+    padding: 0;
+}
+message {
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+textbox {
+    text-color: @foreground;
+}
+listview {
+    fixed-height: 0;
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    spacing:      2px ;
+    scrollbar:    false;
+    padding:      2px 0px 0px ;
+}
+element {
+    padding: 1px ;
+}
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+scrollbar {
+    width:        4px ;
+    handle-width: 8px ;
+    padding:      0;
+}
+mode-switcher {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+}
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    1px ;
+}
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        "";
+    font: "Font Awesome 5 Free Regular 12";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @normal-foreground;
+}

@@ -1,0 +1,15 @@
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[push]
+	default = simple
+[user]
+	email = joaolrpaulo@gmail.com
+	name = João Paulo
+[fetch]
+    prune = true
+[alias]
+    log-me = log --author 'João Paulo'
+    push-origin = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+    reset-origin = !git reset origin/$(git rev-parse --abbrev-ref HEAD)
+    tree = log --all --graph --oneline --decorate
