@@ -59,6 +59,8 @@ cp fish/panda_env.fish ~/.config/fish/configs/panda_env.fish
 cp fish/panda_functions.fish ~/.config/fish/configs/panda_functions.fish
 cp fish/init.fish ~/.config/fish/config.fish
 
+# If M1 Pro run this manually -> `set -U fish_user_paths /opt/homebrew/bin $fish_user_paths`
+
 # Setup FNM
 curl -fsSL https://fnm.vercel.app/install | bash
 
