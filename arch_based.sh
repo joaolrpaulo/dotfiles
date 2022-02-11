@@ -12,7 +12,6 @@ sudo pacman -S yay base-devel
 # Install packages
 yay -S android-tools \
     bitwarden \
-    brave \
     clang \
     dfu-programmer \
     docker \
@@ -31,13 +30,14 @@ yay -S android-tools \
     openrgb \
     polybar \
     python-powerline-git \
-    rofi \
+    rofi-wayland \
     rxvt-unicode \
     screenfetch \
     spotify \
+    sublime-text-4 \
     telegram-desktop \
     vim \
-    visual-studio-code-bin
+    waybar
 
 # Remove base packages
 yay -R hexchat \
