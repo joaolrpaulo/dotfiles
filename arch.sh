@@ -54,23 +54,17 @@ mkdir -p ~/coding && cd configs
 
 # Setup Fish
 mkdir -p ~/.config/fish/configs
-cp fish/panda_aliases.fish ~/.config/fish/configs/panda_aliases.fish
-cp fish/panda_env.fish ~/.config/fish/configs/panda_env.fish
-cp fish/panda_functions.fish ~/.config/fish/configs/panda_functions.fish
+cp fish/aliases.fish ~/.config/fish/configs/aliases.fish
+cp fish/env.fish ~/.config/fish/configs/env.fish
+cp fish/functions.fish ~/.config/fish/configs/functions.fish
 cp fish/init.fish ~/.config/fish/config.fish
-
-# If M1 Pro run this manually -> `set -U fish_user_paths /opt/homebrew/bin $fish_user_paths`
 
 # Setup FNM
 curl -fsSL https://fnm.vercel.app/install | bash
 
 # Setup GIT
-cp          git/gitignore       ~/.gitignore
-cp          git/gitconfig       ~/.gitconfig
-
-# Setup i3
-mkdir -p    ~/.i3/
-cp          i3/config           ~/.i3/config
+cp          git/gitignore        ~/.gitignore
+cp          git/gitconfig_global ~/.gitconfig_global
 
 # Setup Xresources
 cp          ~/.Xresources       ~/.Xresources.back

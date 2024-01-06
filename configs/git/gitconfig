@@ -1,6 +1,8 @@
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore
+	excludesFile = ~/.gitignore_global
+    pager = delta
+	precomposeUnicode = true
 [push]
 	default = simple
 [user]
@@ -13,3 +15,14 @@
     push-origin = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
     reset-origin = !git reset origin/$(git rev-parse --abbrev-ref HEAD)
     tree = log --all --graph --oneline --decorate
+[url "ssh://git@github.com/"]
+  	insteadOf = https://github.com/
+[interactive]
+    	diffFilter = delta --color-only
+[delta]
+    	features = line-numbers decorations
+    	whitespace-error-style = 22 reverse
+[delta "decorations"]
+    	commit-decoration-style = bold yellow box ul
+    	file-style = bold yellow ul
+    	file-decoration-style = none
